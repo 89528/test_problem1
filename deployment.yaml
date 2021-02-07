@@ -15,7 +15,7 @@ spec:
   spec:
     containers:
     - name: test_problem1-deployment
-      image: :BUILD_NUMBER
+      image: Java_test_pipeline:BUILD_NUMBER
       ports:
       - containerPort: 8080
       resources:
@@ -23,6 +23,6 @@ spec:
            cpu: 200m
       readinessProbe:
         httpGet:
-          path: /p/gold/ping
+          path: 
           port: 8080
 
