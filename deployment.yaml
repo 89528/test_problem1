@@ -14,8 +14,8 @@ spec:
         app: test_problem1-deployment
   spec:
     containers:
-    - name: mbk-gold-stag-container
-      image: kube-registry.mobikwik.com:5001/mobikwik/gold_stag:BUILD_NUMBER
+    - name: test_problem1-deployment
+      image: :BUILD_NUMBER
       ports:
       - containerPort: 8080
       resources:
