@@ -23,6 +23,6 @@ spec:
            cpu: 200m
       readinessProbe:
         httpGet:
-          path: 
+          path: /sample/mishra
           port: 8080
 
