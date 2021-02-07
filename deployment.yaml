@@ -4,4 +4,25 @@ metadata:
   name: test_problem1-deployment
   namespace: test
 spec:
-  
+  selectors:
+    matchlabels:
+      app: test_problem1-deployment
+  replica: 1
+  template:
+    metadata:
+      labels:
+        app: test_problem1-deployment
+  spec:
+    containers:
+    - name: mbk-gold-stag-container
+      image: kube-registry.mobikwik.com:5001/mobikwik/gold_stag:BUILD_NUMBER
+      ports:
+      - containerPort: 8080
+      resources:
+        requests:
+           cpu: 200m
+      readinessProbe:
+        httpGet:
+          path: /p/gold/ping
+          port: 8080
+
